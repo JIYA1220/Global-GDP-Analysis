@@ -118,5 +118,3 @@ Open the dashboard:
 
 ---
 
-## Notes
-- If you want, I can also generate a `requirements.txt` and a cleaner project layout (`src/`, `notebooks/`, `assets/`) while keeping your current files working.
