@@ -65,6 +65,22 @@ print(f"p-value: {p_val:.5e}")
 if p_val < 0.05:
     print("✅ Result: Statistically significant differences exist between regional GDPs.")
 
+# C. Outlier Detection (Z-score & IQR)
+print("\n--- Outlier Detection (GDP) ---")
+# Z-score method (threshold = 3)
+z_scores = np.abs(stats.zscore(df['GDP ($ per capita)']))
+outliers_z = df[z_scores > 3]
+
+# IQR method
+Q1 = df['GDP ($ per capita)'].quantile(0.25)
+Q3 = df['GDP ($ per capita)'].quantile(0.75)
+IQR = Q3 - Q1
+outliers_iqr = df[(df['GDP ($ per capita)'] < (Q1 - 1.5 * IQR)) | (df['GDP ($ per capita)'] > (Q3 + 1.5 * IQR))]
+
+print(f"Z-score outliers: {len(outliers_z)} detected")
+print(f"IQR outliers:     {len(outliers_iqr)} detected")
+print("✅ Outlier validation completed for publication-quality reporting.")
+
 # ── 4. MACHINE LEARNING (Predictive Modeling) ────────────────────────────────
 print("\n[STEP 3] BUILDING PREDICTIVE MODELS...")
 
