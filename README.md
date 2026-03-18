@@ -78,8 +78,6 @@ A 2-page Power BI dashboard presenting:
 
 ## Results and Visual Outputs
 
-Add these images to the repository under `assets/` with the exact filenames below, then they will render here.
-
 ### Section 01: Global Wealth and Data Integrity
 ![Section 01 - Global Wealth and Data Integrity](assets/section-01.png)
 
